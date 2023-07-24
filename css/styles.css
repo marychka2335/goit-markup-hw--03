@@ -21,7 +21,15 @@ body {
   color: var(--text-color);
 }
 
-.menu-link {
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.section {}) .menu-link {
   color: var(--dark-color);
   font-weight: 500;
 }
@@ -138,6 +146,18 @@ body {
 
 .team-text {
   text-align: center;
+}
+
+.projects-filter-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-description-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .projects-title {
