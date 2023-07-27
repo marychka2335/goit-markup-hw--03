@@ -1,3 +1,7 @@
+html {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-band-color: #4d5ae5;
   --pressed-state-color: #404bbf;
@@ -13,6 +17,11 @@
   --modal-background-color: #fcfcfc;
 }
 
+* ::after,
+::before {
+  box-sizing: inherit;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
@@ -24,12 +33,75 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p {
   padding: 0;
   margin: 0;
 }
 
-.section {}) .menu-link {
+input,
+textarea,
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1158px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.section {
+  padding-bottom: 120px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* header styles */
+.header-style {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header-container {
+  display: flex;
+  margin: auto;
+  padding: 24px 0;
+}
+
+/* .header-nav {
+  display: flex;
+  align-items: center;
+} */
+
+.header-style .menu-link {
   color: var(--dark-color);
   font-weight: 500;
 }
@@ -57,16 +129,53 @@ p {
   font-style: normal;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  padding: 0px;
+  margin-right: 332px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.nav-menu-item:not(:last-child) {
+  margin-right: 40px;
+}
+
 .nav-menu .current {
   color: var(--pressed-state-color);
 }
 
-.list {
-  list-style: none;
+.contacts-menu {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-.link {
-  text-decoration: none;
+.contacts-menu-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+
+
+/* hero styles */
+.hero {
+  background: var(--dark-color);
+  padding-top: 188px;
+  padding-bottom: 188px;
+  /* padding-left: 0;
+  padding-right: 0; */
+}
+
+.hero-container {
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header-one {
@@ -76,6 +185,12 @@ p {
   color: var(--white-color);
   text-align: center;
   letter-spacing: 0.02em;
+  max-width: 504px;
+
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .header-two {
@@ -88,18 +203,6 @@ p {
   letter-spacing: 0.02em;
 }
 
-.header-three {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--dark-color);
-  letter-spacing: 0.02em;
-}
-
-.hero {
-  background-color: var(--dark-color);
-}
-
 
 .btn {
   cursor: pointer;
@@ -109,6 +212,16 @@ p {
   font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.5;
+  border-width: 0px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 4px;
+  width: 175px;
+  /* height: 56px; */
 }
 
 .btn:hover,
@@ -120,44 +233,163 @@ p {
 .cta-button {
   background-color: var(--primary-band-color);
   color: var(--white-color);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .filter-button {
   background-color: var(--light-color);
   color: var(--primary-band-color);
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: auto;
+  /* height: 48px; */
+  /* box-shadow: none; */
+
+  border: 1px solid rgba(231, 233, 252, 1);
 }
 
 .filter-button:active {
   background-color: var(--pressed-state-color);
   color: var(--white-color);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
+/* specialty styles */
+.specialty {
+  padding-top: 120px;
+}
+
+.specialty-container {
+  padding: 0px;
+}
+
+.specialty-list {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  /* gap: 24px; */
+}
+
+.specialty .header-three {
+  margin-bottom: 8px;
+}
+
+.specialty-item {
+  width: 264px;
+}
+
+.specialty-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.header-three {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--dark-color);
+  letter-spacing: 0.02em;
+}
+
+/* business style */
+.business-list-container {
+  padding: 0px;
+  margin: auto;
+}
+
+.business .header-two {
+  margin-bottom: 72px;
+}
+
+.business-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.business-item:not(:last-child) {
+  margin-right: 24px;
+}
+
+.business-item {
+  margin-bottom: 0px;
+  border: 1px solid rgba(231, 233, 252, 1);
+}
+
+/* team styles */
 .team {
   background-color: var(--light-color);
 }
 
+.team-container {
+  padding: 0;
+}
+
+.team-list {
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
 .team .item {
   background: var(--white-color);
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.team .header-two {
+  padding-top: 120px;
+  padding-bottom: 72px;
 }
 
 .team .header-three {
   text-align: center;
+  padding-top: 32px;
+  padding-bottom: 8px;
 }
 
 .team-text {
   text-align: center;
+  padding-bottom: 32px;
+}
+
+/* projects styles */
+.projects {
+  padding-top: 96px;
+}
+
+.projects-container {
+  padding: 0px;
+  /* margin: 0px; */
+  /* margin: auto; */
 }
 
 .projects-filter-menu {
   display: flex;
   justify-content: center;
+  gap: 24px;
+  padding: 0px 0px 72px 0px;
+  margin: 0px;
 }
 
 .projects-description-menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  padding: 0px;
+  margin: 0px;
+  gap: 48px 24px;
+}
+
+.projects-wrapper {
+  border: 1px solid var(--accent-color);
+  border-top: none;
+  padding: 32px 16px;
 }
 
 .projects-title {
@@ -166,6 +398,8 @@ p {
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
+
 }
 
 .projects-text {
@@ -175,8 +409,11 @@ p {
   color: var(--text-color);
 }
 
+/* footer styles  */
 .footer-style {
   background-color: var(--dark-color);
+  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 .logotype {
@@ -190,6 +427,7 @@ p {
 
 .logo-start {
   color: var(--primary-band-color);
+  margin-right: 76px;
 }
 
 .logo-end-dark {
@@ -202,4 +440,6 @@ p {
 
 .footer-text {
   color: var(--light-color);
+  padding-top: 16px;
+  width: 268px;
 }
