@@ -321,7 +321,7 @@ nav {
 
 /* business style */
 .business-list-container {
-  padding: auto;
+  padding: 0;
   margin: auto;
 }
 
@@ -332,6 +332,7 @@ nav {
 .business-list {
   display: flex;
   gap: 24px;
+
   padding-left: 0;
   margin: 0;
 
@@ -342,7 +343,7 @@ nav {
 } */
 
 .business-item {
-  flex-basis: calc((100% - 3 * 16px) / 3);
+  flex-basis: calc((100% - 3 * 24px) / 3);
   margin-bottom: 0px;
   border: 1px solid var(--accent-color);
 
@@ -353,6 +354,11 @@ nav {
   background-color: var(--light-color);
   padding-top: 120px;
   padding-bottom: 120px;
+}
+
+.team-container {
+  padding: 0;
+  margin: auto;
 }
 
 .team-list {
@@ -368,10 +374,11 @@ nav {
 
   margin: auto;
   align-items: center;
+
 }
 
 .team .item {
-  width: calc((100% - 72px) / 4);
+  /* flex-basis: calc((100% - 3 * 24px) / 4); */
   background: var(--white-color);
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
