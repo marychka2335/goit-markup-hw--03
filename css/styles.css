@@ -109,9 +109,6 @@ img {
 
 .nav-menu-item {
   color: var(--dark-color);
-}
-
-.header-logo-start {
   padding-top: 24px;
   padding-bottom: 24px;
 }
