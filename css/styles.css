@@ -57,7 +57,7 @@ img {
   width: 1158px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  padding: 0 15px 0 15px;
 }
 
 .list {
@@ -88,18 +88,21 @@ img {
 /* header styles */
 .header-style {
   border-bottom: 1px solid var(--accent-color);
+  align-items: center;
 }
 
 .header-container {
   display: flex;
   margin: auto;
-  padding: 24px 0;
+  padding: 24px 0 24px;
+  align-items: center;
 }
 
 /* .header-nav {
   display: flex;
   align-items: center;
 } */
+
 
 .header-style .menu-link {
   color: var(--dark-color);
@@ -110,18 +113,18 @@ img {
   color: var(--dark-color);
 }
 
-.contacts {
+.header-contacts {
   font-style: normal;
 }
 
-.contact-link {
+.header-contacts-link {
   color: inherit;
 }
 
 .menu-link:hover,
 .menu-link:focus,
-.contact-link:hover,
-.contact-link:focus {
+.header-contacts-link:hover,
+.header-contacts-link:focus {
   color: var(--pressed-state-color);
 }
 
@@ -150,18 +153,13 @@ nav {
   color: var(--pressed-state-color);
 }
 
-.contacts-menu {
+.header-contacts-menu {
   display: flex;
   align-items: center;
   padding: 0px;
   margin: 0px;
+  gap: 40px;
 }
-
-.contacts-menu-item:not(:last-child) {
-  margin-right: 40px;
-}
-
-
 
 /* hero styles */
 .hero {
@@ -185,7 +183,7 @@ nav {
   color: var(--white-color);
   text-align: center;
   letter-spacing: 0.02em;
-  max-width: 504px;
+  max-width: 496px;
 
   margin-bottom: 48px;
   margin-left: auto;
@@ -220,8 +218,8 @@ nav {
   align-items: center;
   padding: 16px 32px;
   border-radius: 4px;
-  width: 175px;
-  /* height: 56px; */
+  min-width: 169px;
+  height: 56px;
 }
 
 .btn:hover,
@@ -234,6 +232,7 @@ nav {
   background-color: var(--primary-band-color);
   color: var(--white-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .filter-button {
@@ -259,6 +258,11 @@ nav {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
+.filter-button:hover,
+.filter-button:focus {
+  border: 1px solid transparent;
+}
+
 /* specialty styles */
 .specialty {
   padding-top: 120px;
@@ -280,7 +284,7 @@ nav {
 }
 
 .specialty-item {
-  width: 264px;
+  width: calc((100% - 72px));
 }
 
 .specialty-item:not(:last-child) {
@@ -297,7 +301,7 @@ nav {
 
 /* business style */
 .business-list-container {
-  padding: 0px;
+  padding: auto;
   margin: auto;
 }
 
@@ -307,17 +311,19 @@ nav {
 
 .business-list {
   display: flex;
-  padding: 0;
+  padding-left: 0;
   margin: 0;
+  gap: 24px;
 }
 
-.business-item:not(:last-child) {
+/* .business-item:not(:last-child) {
   margin-right: 24px;
-}
+} */
 
 .business-item {
   margin-bottom: 0px;
-  border: 1px solid rgba(231, 233, 252, 1);
+  border: 1px solid var(--accent-color);
+  flex-basis: calc((100% - 3 * 16px) / 3);
 }
 
 /* team styles */
@@ -326,14 +332,22 @@ nav {
 }
 
 .team-container {
-  padding: 0;
+  padding: 120px 0 120px;
 }
 
 .team-list {
   display: flex;
-  gap: 24px;
+
   padding: 0;
   margin: 0;
+  gap: 24px;
+}
+
+.team-card {
+  padding: 32px 0 32px;
+  width: calc((100% - 72px) / 4);
+  margin: auto;
+  align-items: center;
 }
 
 .team .item {
@@ -342,20 +356,19 @@ nav {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.team .header-two {
+.team-header-two {
   padding-top: 120px;
-  padding-bottom: 72px;
+  margin-bottom: 72px;
+  text-align: center;
 }
 
 .team .header-three {
   text-align: center;
-  padding-top: 32px;
   padding-bottom: 8px;
 }
 
 .team-text {
   text-align: center;
-  padding-bottom: 32px;
 }
 
 /* projects styles */
@@ -373,8 +386,9 @@ nav {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 0px 0px 72px 0px;
+  padding-left: 0;
   margin: 0px;
+  margin-bottom: 72px;
 }
 
 .projects-description-menu {
@@ -384,6 +398,10 @@ nav {
   padding: 0px;
   margin: 0px;
   gap: 48px 24px;
+}
+
+.project-item {
+  width: calc((100% - 48px) / 3);
 }
 
 .projects-wrapper {
@@ -428,6 +446,11 @@ nav {
 .logo-start {
   color: var(--primary-band-color);
   margin-right: 76px;
+  display: inline-block;
+}
+
+.footer-style .logo-start {
+  margin-bottom: 16px;
 }
 
 .logo-end-dark {
@@ -440,6 +463,5 @@ nav {
 
 .footer-text {
   color: var(--light-color);
-  padding-top: 16px;
   width: 268px;
 }
