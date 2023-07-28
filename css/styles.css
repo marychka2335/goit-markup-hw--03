@@ -111,12 +111,15 @@ img {
   color: var(--dark-color);
 }
 
+.header-logo-start {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
 .logo-start {
   color: var(--primary-band-color);
   margin-right: 76px;
   display: inline-block;
-  padding-top: 24px;
-  padding-bottom: 24px;
 }
 
 .header-contacts {
